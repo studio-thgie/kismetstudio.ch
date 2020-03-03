@@ -1,0 +1,318 @@
+/*!
+    Theme Name: Kismet 2020
+    Theme URI: https://www.kismetstudio.ch/
+    Author: Adrian Demleitner
+    Author URI: http://things.care
+    Description: Description
+    Version: 1.0.0
+    License: copyright 2020 sifon.li
+    License URI: http://sifon.li
+    Text Domain: kismet
+*/
+
+/* basics */
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* typo */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #161615;
+    background-color: #FFFDE5;
+    font-weight: light;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+h2 {
+    display: inline-block;
+    margin: 0;
+    font-size: 120px;
+    font-style: italic;
+    font-weight: bold;
+    text-transform: uppercase;
+    transform: rotate(-10deg);
+}
+.courses h2,
+.rates h2 {
+    font-size: 190px;
+}
+h3 {
+    font-size: 30px;
+    margin: 0 0 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+.plan h3 {
+    position: relative;
+    left: -8px;
+    padding: 4px 8px;
+
+    transition: .25s;
+}
+.plan.active h3 {
+    background-color: #FFE800;
+}
+.rate h3 {
+    text-align: center;
+    padding: 36px 0;
+    background-color: #FFE800;
+}
+.rate h3:first-child {
+    margin: 0 0 25px;
+}
+.rate h3:last-child {
+    margin: 25px 0 0;
+}
+
+p {
+    font-size: 20px;
+    margin: 0 0 20px;
+    font-style: italic;
+}
+p.meta {
+    position: relative;
+    top: -10px;
+    margin-bottom: 0;
+    font-size: 10px;
+    font-style: normal;
+}
+.rate p {
+    font-size: 18px;
+    padding: 0 15px;
+}
+.rate p + p {
+    margin-top: 5px;
+}
+.rate p.price {
+    font-size: 38px;
+}
+.rate p.price + p {
+    margin-top: 15px;
+}
+p.em {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+a {
+    color: #161615;
+    text-decoration: none;
+
+    transition: .25s;
+
+}
+a:hover {
+    color: #FFE800;
+}
+.rate a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+footer p {
+    max-width: 1480px;
+    font-size: 25px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.tac {
+    text-align: center;
+}
+.tar {
+    text-align: right;
+}
+
+/* nav */
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+nav li {
+    list-style: none;
+}
+#lang {
+    float: right;
+}
+#lang li {
+    display: inline-block;
+    font-size: 25px;
+    font-style: italic;
+}
+#navigation ul {
+    display: block;
+    width: 440px;
+    margin: 0 auto;
+    line-height: 0.95;
+}
+#navigation li {
+    font-size: 120px;
+    font-style: italic;
+    transform: rotate(-10deg);
+    font-weight: bold;
+}
+
+/* layout */
+body {
+    position: relative;
+    padding: 40px 0 0;
+}
+header, main {
+    max-width: 1480px;
+    padding: 0 40px;
+    margin: 0 auto;
+    clear: both;
+}
+footer {
+    border-top: 5px solid #000;
+    padding: 60px 40px 180px;
+}
+.loaded {
+    overflow-y: auto;
+}
+.loaded .loading-screen {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.hero-header {
+    position: relative;
+    height: 800px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.hero-header:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 33.3%;
+    width: 100%;
+    background: linear-gradient(
+        0deg, 
+        rgba(255, 253, 229, 1) 0%, 
+        rgba(255, 253, 229, 1) 33.3%, 
+        rgba(255, 253, 229, 0) 100%)
+    ;
+}
+
+main nav,
+main section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 160px 0;
+}
+
+.news article {
+    max-width: 660px;
+    margin-left: 30%;
+}
+
+.studio h2 {
+    position: relative;
+    top: 70px;
+    left: 30px;
+}
+
+.courses h2 {
+    position: relative;
+    left: 100px;
+}
+.courses .visual-plan {
+    margin-top: 200px;
+}
+.course-descriptions {
+    padding-top: 60px;
+}
+.course-descriptions .desc + .desc {
+    margin-top: 125px;
+}
+
+.gallery div {
+    height: 500px;
+    margin-right: 15px;
+}
+
+.plan {
+    padding-left: 70px;
+    cursor: pointer;
+}
+.plan + .plan {
+    margin-top: 20px;
+}
+
+.rates .header {
+    margin-bottom: 100px;
+}
+
+.rate {
+    display: inline-block;
+    max-width: 320px;
+    margin: 0 13px 18px 0;
+    padding: 0;
+    border: 3px solid #000;
+}
+
+.contact {
+    padding-bottom: 220px;
+}
+.contact .map {
+    padding-right: 20px;
+}
+
+/* decorations */
+.decoration {
+    position: relative;
+    height: 0;
+    z-index: -1;
+}
+.decoration img {
+    position: absolute;
+    max-height: 860px;
+}
+.decoration.news img {
+    top: 60px;
+    right: 50%;
+}
+.decoration.courses img {
+    left: 70%;
+    bottom: -80px;
+}
+.decoration.rates img {
+    right: 60%;
+    bottom: -240px;
+    max-height: 590px;
+}
+.decoration.contact img {
+    bottom: -100px;
+    left: 50%;
+}
+
+/* helper classes */
+.one-half {
+    float: left;
+    width: 50%;
+}
+.one-third {
+    float: left;
+    width: 33.3%;
+}
+.two-third {
+    float: left;
+    width: 66.6%;
+}
+
+.clear {
+    clear: both;
+}
+
+.row img {
+    max-width: 100%;
+}
