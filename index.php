@@ -74,14 +74,24 @@
             </ul>
         </nav>
         <section id="Booking">
-            <h2>Booking</h2>
+            <h2>
+                Booking
+                <?php if(get_field('booking_subtitle')): ?>
+                    <p class="em"><?php the_field('booking_subtitle'); ?></p>
+                <?php endif; ?>
+            </h2>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Booking-Calendar.svg" alt="">
         </section>
         <div class="decoration news">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tri.svg">    
         </div>
         <section id="News" class="news">
-            <h2>News</h2>
+            <h2>
+                News
+                <?php if(get_field('news_subtitle')): ?>
+                    <p class="em"><?php the_field('news_subtitle'); ?></p>
+                <?php endif; ?>
+            </h2>
             <?php
                 $lastposts = get_posts( array(
                     'posts_per_page' => 3
@@ -102,7 +112,12 @@
             ?>
         </section>
         <section id="Studio" class="studio">
-            <h2>Studio</h2>
+            <h2>
+                Studio
+                <?php if(get_field('studio_subtitle')): ?>
+                    <p class="em"><?php the_field('studio_subtitle'); ?></p>
+                <?php endif; ?>
+            </h2>
             <div class="row">
                 <div class="one-half">
                     &nbsp;
@@ -122,12 +137,51 @@
                 <?php endif; ?>
         </section>
         <section id="Kurse" class="courses">
-            <h2>Kurse</h2>
+            <h2>
+                Kurse
+                <?php if(get_field('courses_subtitle')): ?>
+                    <p class="em"><?php the_field('courses_subtitle'); ?></p>
+                <?php endif; ?>
+            </h2>
             <div class="row">
                 <div class="one-half visual-plan">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/PLAN.svg" alt="">
+                    <table class="plan-table">
+                        <thead>
+                            <tr>
+                                <td>Heure</td> <td>Lu</td> <td>Ma</td> <td>Me</td> <td>Je</td> <td>Ve</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>09:00</td> <td></td> <td></td> <td></td> <td></td> <td></td>
+                            </tr>
+                            <tr>
+                                <td>10:00</td> <td></td> <td></td> <td></td> <td></td> <td></td>
+                            </tr>
+                            <tr>
+                                <td>11:00</td> <td></td> <td></td> <td></td> <td></td> <td></td>
+                            </tr>
+                            <tr>
+                                <td>12:15</td> <td></td> <td></td> <td></td> <td></td> <td></td>
+                            </tr>
+                            <tr>
+                                <td>17:00</td> <td></td> <td></td> <td></td> <td></td> <td></td>
+                            </tr>
+                            <tr>
+                                <td>18:00</td> <td></td> <td></td> <td></td> <td></td> <td></td>
+                            </tr>
+                            <tr>
+                                <td>19:00</td> <td></td> <td></td> <td></td> <td></td> <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="one-half">
+                    <script>
+
+                        var plans = [];
+
+                    </script>
                     <?php
                         $courses = get_posts( array(
                             'post_type' => 'course'
@@ -136,15 +190,27 @@
                         if ( $courses ) {
                             foreach ( $courses as $post ) :
                                 setup_postdata( $post ); ?>
-                                <div class="plan">
+                                <div class="plan" data-plan="<?php echo $post->post_name; ?>">
                                     <h3><?php the_title(); ?></h3>
                                     <?php the_content(); ?>
-                            </div>
+                                </div>
+                                <script>
+
+                                    plans['<?php echo $post->post_name; ?>'] = [
+                                        [<?php the_field('monday'); ?>],
+                                        [<?php the_field('tuesday'); ?>],
+                                        [<?php the_field('wednesday'); ?>],
+                                        [<?php the_field('thursday'); ?>],
+                                        [<?php the_field('friday'); ?>]
+                                    ]
+
+                                </script>
                             <?php
                             endforeach; 
                             wp_reset_postdata();
                         }
                     ?>
+
                 </div>
             </div>
             <div class="decoration courses clear">
@@ -178,75 +244,33 @@
             <div class="tar header">
                 <h2>
                     Tarife
-                    <p class="em">1 Probestunde gratis</p>
+                    <?php if(get_field('rate_subtitle')): ?>
+                    <p class="em"><?php the_field('rate_subtitle'); ?></p>
+                    <?php endif; ?>
                 </h2>
             </div>
             <div class="rate-wrapper">
-                <section class="rate">
-                    <h3>Pilates Tapis</h3>
-                    <p class="tac">À partir de</p>
-                    <p class="price">CHF 17.– / heure</p>
-                    <p>
-                        Cours sans abonnement: CHF 30.- / h<br>
-                        Abonnement 10x CHF 250.-
-                        Abonnement 20x CHF 400.-
-                        1x semaine à l’année CHF 960.-
-                        2x semaine à l’année CHF 1760.-
-                    </p>
-                    <h3><a href="#Kontakt">Contactez-nous</a></h3>
-                </section>
-                <section class="rate">
-                    <h3>Pilates Tapis</h3>
-                    <p class="tac">À partir de</p>
-                    <p class="price">CHF 17.– / heure</p>
-                    <p>
-                        Cours sans abonnement: CHF 30.- / h<br>
-                        Abonnement 10x CHF 250.-
-                        Abonnement 20x CHF 400.-
-                        1x semaine à l’année CHF 960.-
-                        2x semaine à l’année CHF 1760.-
-                    </p>
-                    <h3><a href="#Kontakt">Contactez-nous</a></h3>
-                </section>
-                <section class="rate">
-                    <h3>Pilates Tapis</h3>
-                    <p class="tac">À partir de</p>
-                    <p class="price">CHF 17.– / heure</p>
-                    <p>
-                        Cours sans abonnement: CHF 30.- / h<br>
-                        Abonnement 10x CHF 250.-
-                        Abonnement 20x CHF 400.-
-                        1x semaine à l’année CHF 960.-
-                        2x semaine à l’année CHF 1760.-
-                    </p>
-                    <h3><a href="#Kontakt">Contactez-nous</a></h3>
-                </section>
-                <section class="rate">
-                    <h3>Pilates Tapis</h3>
-                    <p class="tac">À partir de</p>
-                    <p class="price">CHF 17.– / heure</p>
-                    <p>
-                        Cours sans abonnement: CHF 30.- / h<br>
-                        Abonnement 10x CHF 250.-
-                        Abonnement 20x CHF 400.-
-                        1x semaine à l’année CHF 960.-
-                        2x semaine à l’année CHF 1760.-
-                    </p>
-                    <h3><a href="#Kontakt">Contactez-nous</a></h3>
-                </section>
-                <section class="rate">
-                    <h3>Pilates Tapis</h3>
-                    <p class="tac">À partir de</p>
-                    <p class="price">CHF 17.– / heure</p>
-                    <p>
-                        Cours sans abonnement: CHF 30.- / h<br>
-                        Abonnement 10x CHF 250.-
-                        Abonnement 20x CHF 400.-
-                        1x semaine à l’année CHF 960.-
-                        2x semaine à l’année CHF 1760.-
-                    </p>
-                    <h3><a href="#Kontakt">Contactez-nous</a></h3>
-                </section>
+                <?php
+                    $rates = get_posts( array(
+                        'post_type' => 'rate'
+                    ) );
+                    
+                    if ( $rates ) {
+                        foreach ( $rates as $post ) :
+                            setup_postdata( $post ); ?>
+                            
+                            <section class="rate">
+                                <h3><?php the_title(); ?></h3>
+                                <p class="tac">À partir de</p>
+                                <p class="price">CHF <?php the_field('price') ?></p>
+                                <?php the_content(); ?>
+                                <h3><a href="#Kontakt">Contactez-nous</a></h3>
+                            </section>
+                        <?php
+                        endforeach; 
+                        wp_reset_postdata();
+                    }
+                ?>
             </div>
         </section>
         <div class="decoration contact">
@@ -255,7 +279,9 @@
         <section id="Kontakt" class="contact">
             <h2>
                 Kontakt
-                <p class="em"> Nidaugasse 8<br>2502 Bienne </p>
+                <?php if(get_field('contact_subtitle')): ?>
+                    <p class="em"><?php the_field('contact_subtitle'); ?></p>
+                <?php endif; ?>
             </h2>
             <div class="row">
                 <div class="two-third map">
@@ -264,11 +290,7 @@
                         width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                 </div>
                 <div class="one-third">
-                    <p class="em">Nina +41 79 421 20 77<br><a
-                            href="mailto:nina@kismetstudio.ch">nina@kismetstudio.ch</a></p>
-                    <p class="em">Ahmet +41 79 562 08 11<br><a
-                            href="mailto:ahmet@kismetstudio.ch">ahmet@kismetstudio.ch</a></p>
-                    <p class="em">Heures d’ouverture<br>Lu-Ve: 9:00 à 20:00</p>
+                    <?php the_field('contact_desc'); ?>
                 </div>
             </div>
             <div class="clear"></div>

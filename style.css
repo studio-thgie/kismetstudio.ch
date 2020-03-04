@@ -25,6 +25,7 @@ body {
     color: #161615;
     background-color: #FFFDE5;
     font-weight: light;
+    overflow-x: hidden;
 }
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
@@ -96,6 +97,7 @@ p.meta {
 .rate p.price + p {
     margin-top: 15px;
 }
+.contact p,
 p.em {
     font-size: 25px;
     font-weight: bold;
@@ -246,6 +248,30 @@ main section {
 }
 .plan + .plan {
     margin-top: 20px;
+}
+
+.plan-table {
+    width: 100%;
+}
+.plan-table td {
+    width: 16.6%;
+    height: 50px;
+    font-size: 14px;
+    font-style: italic;
+    border-right: 10px solid #FFFDE5;
+    border-bottom: 10px solid #FFFDE5;
+    text-align: center;
+    text-transform: uppercase;
+
+    transition: .25s;
+}
+.plan-table thead td,
+.plan-table tbody td:first-child,
+.plan-table td.active {
+    background-color: #FFE800;
+}
+.plan-table td:last-child {
+    border-right: 0;
 }
 
 .rates .header {
