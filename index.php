@@ -6,60 +6,11 @@
     
     */
 
+    get_header();
+
 ?>
 
-<!DOCTYPE html>
-<html lang="de">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php the_title(); ?> - <?php bloginfo('name'); ?></title>
-
-    <style>
-        .loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #FFFDE5;
-            z-index: 9999;
-
-            transition: 0.5s;
-        }
-
-        .loading-screen h2 {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%) translateY(-70%) rotate(-10deg);
-            margin: 0 auto;
-        }
-    </style>
-
-    <?php wp_head(); ?>
-
-</head>
-
-<body>
-
-    <div class="loading-screen">
-        <h2>Loading...</h2>
-    </div>
-
-    <header>
-        <a href="/">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="Logo Kismet">
-        </a>
-        <nav aria-label="Sprachwahl" id="lang">
-            <ul>
-                <?php foreach(/*icl_get_languages()*/[] as $lang): ?>
-                    <li <?php if($lang['active']){ echo 'active'; } ?>" ><a href="<?php echo $lang['url']; ?>"><?php echo $lang['language_code']; ?></a></li>
-                <?php endforeach; ?>
-            </ul>
-        </nav>
-    </header>
     <div class="hero-header" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/hero-header.png');">
     </div>
     <main>
@@ -73,7 +24,7 @@
                 <li><a href="#Kontakt">Kontakt</a></li>
             </ul>
         </nav>
-        <section id="Booking">
+        <section id="Booking" class="booking">
             <h2>
                 Booking
                 <?php if(get_field('booking_subtitle')): ?>
@@ -283,11 +234,27 @@
                     <p class="em"><?php the_field('contact_subtitle'); ?></p>
                 <?php endif; ?>
             </h2>
+            <div class="row portraits">
+                <div class="two-third tar">
+                    <div class="portrait">
+                        <p class="em">Nina Pigné</p>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="one-third">
+                    <div class="portrait">
+                        <p class="em">Ahmed Akdeniz</p>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
             <div class="row">
                 <div class="two-third map">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2713.906691485375!2d7.243161951405494!3d47.14009407905426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e194d65f4571b%3A0x1d3fe72c9fef39c1!2sNidaugasse%208%2C%202502%20Biel!5e0!3m2!1sen!2sch!4v1583174605841!5m2!1sen!2sch"
                         width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                    <!-- <div id="map"></div> -->
                 </div>
                 <div class="one-third">
                     <?php the_field('contact_desc'); ?>
@@ -296,15 +263,5 @@
             <div class="clear"></div>
         </section>
     </main>
-    <footer>
-        <p>
-            &copy; <?php echo date("Y"); ?> by Kismet Studio Biel/Bienne | Concept & Design: <a href="https://www.sifon.li">SIFON</a><br>
-            Code: <a href="https://things.care" target="_blank">things.care</a>
-        </p>
-    </footer>
 
-    <?php wp_footer(); ?> 
-
-</body>
-
-</html>
+<?php get_footer(); ?>

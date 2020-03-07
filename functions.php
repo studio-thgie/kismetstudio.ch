@@ -31,7 +31,7 @@
              * Add Custom Image Sizes
              */
             add_image_size( 'gallery', 1000, 500 );
-            add_image_size( 'plans', 1100, 380 );
+            add_image_size( 'plans', 1100, 380, true );
 
         }
     }
