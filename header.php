@@ -51,9 +51,15 @@
         </a>
         <nav aria-label="Sprachwahl" id="lang">
             <ul>
-                <?php foreach(/*icl_get_languages()*/[] as $lang): ?>
+                <?php foreach(icl_get_languages() as $lang): ?>
                     <li <?php if($lang['active']){ echo 'active'; } ?>" ><a href="<?php echo $lang['url']; ?>"><?php echo $lang['language_code']; ?></a></li>
                 <?php endforeach; ?>
+                <li>&mdash;</li>
+                <?php if(is_user_logged_in('/')): ?>
+                    <li><a href="<?php echo wp_logout_url(); ?>">Logout</a></li>
+                    <li>&mdash;</li>
+                <?php endif; ?>
+                <li><a href="/mein-konto">Konto</a></li>
             </ul>
         </nav>
     </header>

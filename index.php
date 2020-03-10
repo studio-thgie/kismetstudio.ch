@@ -31,7 +31,13 @@
                     <p class="em"><?php the_field('booking_subtitle'); ?></p>
                 <?php endif; ?>
             </h2>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Booking-Calendar.svg" alt="">
+            <div class="bookable_course">
+                <?php echo do_shortcode('[appointment_form id="86"]'); ?>
+            </div>
+            <div class="bookable_course hide">
+                <?php echo do_shortcode('[appointment_form id="86"]'); ?>
+            </div>
+            <!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Booking-Calendar.svg" alt=""> -->
         </section>
         <div class="decoration news">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tri.svg">    

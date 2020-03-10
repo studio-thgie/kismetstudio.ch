@@ -147,6 +147,7 @@ nav li {
     display: inline-block;
     font-size: 25px;
     font-style: italic;
+    text-transform: uppercase;
 }
 #navigation ul {
     display: block;
@@ -158,6 +159,60 @@ nav li {
     font-size: 120px;
     font-style: italic;
     transform: rotate(-10deg);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* woocommerce fixes */
+.woocommerce-MyAccount-navigation {
+    max-width: 100%;
+    padding: 110px 0 40px;
+}
+.woocommerce-MyAccount-navigation li {
+    font-size: 25px;
+    font-style: italic;
+    text-transform: uppercase;
+}
+/* .woocommerce-MyAccount-navigation-link--orders, */
+.woocommerce-MyAccount-navigation-link--downloads,
+.woocommerce-MyAccount-navigation-link--edit-address,
+.product_meta,
+.wc-appointments-appointment-cost {
+    display: none !important;
+}
+
+.woocommerce-form-login {
+    max-width: 500px;
+}
+
+.bookable_course {
+    padding-top: 50px;
+}
+.bookable_course .woocommerce {
+    max-width: 700px;
+    margin: 0 auto;
+}
+.wc-appointments-appointment-form-wrap .wc-appointments-appointment-form {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+.wc-appointments-date-picker .ui-datepicker * {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 20px !important;
+}
+.wc-appointments-date-picker .ui-datepicker td.ui-datepicker-current-day a,
+.wc-appointments-appointment-form-wrap .wc-appointments-appointment-form .slot-picker li.slot.selected a, .wc-appointments-appointment-form-wrap .wc-appointments-appointment-form .slot-picker li.slot.selected:hover a {
+    background-color: transparent !important;
+    color: #000 !important;
+    border: 3px solid #000 !important;
+}
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+    background-color: #FFE800 !important;
+    color: #fff !important;
+}
+.ui-datepicker-title {
+    text-transform: uppercase;
     font-weight: bold;
 }
 
@@ -339,6 +394,8 @@ main section {
 .decoration img {
     position: absolute;
     max-height: 860px;
+
+    transform: translateY(0);
 }
 .decoration.news img {
     top: 60px;
@@ -381,6 +438,9 @@ main section {
 
 .row img {
     max-width: 100%;
+}
+.hide {
+    display: none;
 }
 
 @media (max-width: 480px) {
