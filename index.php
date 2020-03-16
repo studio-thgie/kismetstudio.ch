@@ -31,13 +31,34 @@
                     <p class="em"><?php the_field('booking_subtitle'); ?></p>
                 <?php endif; ?>
             </h2>
-            <div class="bookable_course">
-                <?php echo do_shortcode('[appointment_form id="86"]'); ?>
+            <div class="bookable_courses">
+                <?php
+
+                    $courses = get_posts( array(
+                        'post_type' => 'product',
+                        'posts_per_page' => -1
+                    ) );
+                    
+                    if ( $courses ) {
+
+                        echo '<nav id="bookable_course_list"><ul>';
+                            foreach ( $courses as $course ) :
+                                setup_postdata( $course );
+                                echo '<li class="bookable_course_button" data-target="'.slugify($course->post_title).'">'.$course->post_title.'</li>';
+                            endforeach; 
+                        echo '</ul></nav>';
+
+                        foreach ( $courses as $course ) :
+                            setup_postdata( $course );
+                            echo '<div class="bookable_course hide '.slugify($course->post_title).'">';
+                                echo do_shortcode('[appointment_form id="'.$course->ID.'"]');
+                            echo '</div>';
+                        endforeach; 
+                        wp_reset_postdata();
+                    }
+
+                ?>
             </div>
-            <div class="bookable_course hide">
-                <?php echo do_shortcode('[appointment_form id="86"]'); ?>
-            </div>
-            <!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Booking-Calendar.svg" alt=""> -->
         </section>
         <div class="decoration news">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tri.svg">    

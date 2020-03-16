@@ -162,6 +162,27 @@ nav li {
     font-weight: bold;
     text-transform: uppercase;
 }
+#bookable_course_list ul {
+    max-width: 700px;
+    margin: 0 auto;
+}
+#bookable_course_list li {
+	display: inline-block;
+	margin-right: 20px;
+	font-size: 1.6em;
+	font-weight: bold;
+	border: 3px solid black;
+    padding: 5px 14px;
+
+    cursor: pointer;
+    
+    transition: 0.25s;
+}
+
+#bookable_course_list li.active {
+    background-color: black;
+    color: white;
+}
 
 /* woocommerce fixes */
 .woocommerce-MyAccount-navigation {
@@ -177,7 +198,11 @@ nav li {
 .woocommerce-MyAccount-navigation-link--downloads,
 .woocommerce-MyAccount-navigation-link--edit-address,
 .product_meta,
-.wc-appointments-appointment-cost {
+.wc-appointments-appointment-cost,
+.woocommerce-Message .woocommerce-Button,
+.woocommerce div.product p.price,
+.woocommerce div.product .product_title,
+.woocommerce-form-coupon-toggle {
     display: none !important;
 }
 
@@ -202,18 +227,48 @@ nav li {
     font-size: 20px !important;
 }
 .wc-appointments-date-picker .ui-datepicker td.ui-datepicker-current-day a,
-.wc-appointments-appointment-form-wrap .wc-appointments-appointment-form .slot-picker li.slot.selected a, .wc-appointments-appointment-form-wrap .wc-appointments-appointment-form .slot-picker li.slot.selected:hover a {
+.wc-appointments-appointment-form-wrap .wc-appointments-appointment-form .slot-picker li.slot.selected a,
+.wc-appointments-appointment-form-wrap .wc-appointments-appointment-form .slot-picker li.slot.selected:hover a {
     background-color: transparent !important;
     color: #000 !important;
     border: 3px solid #000 !important;
 }
-.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt, .woocommerce button.button.alt,
+.woocommerce input.button.alt {
     background-color: #FFE800 !important;
-    color: #fff !important;
+    color: #000 !important;
+
+    transition: 0.25s;
+}
+.woocommerce #respond input#submit.alt:hover,
+.woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover,
+.woocommerce input.button.alt:hover {
+    background-color: #000 !important;
+    color: #FFE800 !important;
+}
+.woocommerce div.product form.cart .button {
+    font-size: 18px;
+    padding: 20px 40px;
+    float: right;
 }
 .ui-datepicker-title {
     text-transform: uppercase;
     font-weight: bold;
+}
+.woocommerce-error, .woocommerce-info, .woocommerce-message {
+    background-color: transparent !important;
+    border: none !important;
+}
+[name="save_account_details"] {
+    margin-top: 30px;
+}
+.woocommerce form .show-password-input,
+.woocommerce-page form .show-password-input {
+    top: .3em;
+}
+.select2-container {
+    width: 100% !important;
 }
 
 /* layout */
@@ -260,11 +315,15 @@ footer {
     ;
 }
 
-main nav,
+main nav#navigation,
 main section {
     max-width: 1100px;
     margin: 0 auto;
     padding: 160px 0;
+}
+
+main nav#bookable_course_list {
+    padding: 60px 0 0;
 }
 
 .booking img {
@@ -484,7 +543,7 @@ main section {
     main nav, main section {
         padding: 40px 20px;
     }
-    main nav {
+    main nav#navigation {
         position: fixed;
         top: 0;
         width: 100%;
@@ -498,9 +557,12 @@ main section {
 
         z-index: 2000;
     }
-    main nav.open {
+    main nav#navigation.open {
         visibility: visible;
         opacity: 1;
+    }
+    #navigation ul {
+        width: 260px;
     }
     #navigation li {
         font-size: 60px;
@@ -547,6 +609,9 @@ main section {
     }
     .burger.open span:nth-child(3) {
         transform: rotate(-45deg);
+    }
+    nav#lang {
+        display: none;
     }
 
     main section.studio,

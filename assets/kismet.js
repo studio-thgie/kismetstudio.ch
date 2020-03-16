@@ -53,6 +53,15 @@ $(function(){
 
         $('.decoration img').css('transform', 'translateY('+Math.round(800 - 1600 / 100 * prcntg).toString() + 'px)');
     })
+
+    $('.bookable_course_button').on('click', function(){
+        $('.bookable_course_button').removeClass('active');
+        $('.bookable_course').addClass('hide');
+        $(this).addClass('active');
+        $('.bookable_course.'+$(this).data('target')).removeClass('hide');
+    })
+
+    $('.bookable_course_button').eq(0).click();
 });
 
 function initMap() {
