@@ -69,7 +69,7 @@ h3 {
     margin: 0 0 25px;
 }
 .rate h3:last-child {
-    margin: 25px 0 0;
+    margin: auto 0 0;
 }
 
 p {
@@ -93,6 +93,7 @@ p.meta {
 }
 .rate p.price {
     font-size: 38px;
+
 }
 .rate p.price + p {
     margin-top: 15px;
@@ -149,6 +150,10 @@ nav li {
     font-style: italic;
     text-transform: uppercase;
 }
+#lang li:nth-child(2),
+#lang li:nth-child(3) {
+    margin-left: 10px;
+}
 #navigation ul {
     display: block;
     width: 440px;
@@ -185,9 +190,15 @@ nav li {
 }
 
 /* woocommerce fixes */
+.woocommerce {
+    margin-top: 40px;
+}
+.woocommerce-order-details {
+    padding-top: 50px;
+}
 .woocommerce-MyAccount-navigation {
     max-width: 100%;
-    padding: 110px 0 40px;
+    padding: 0px 0 40px;
 }
 .woocommerce-MyAccount-navigation li {
     font-size: 25px;
@@ -197,6 +208,7 @@ nav li {
 /* .woocommerce-MyAccount-navigation-link--orders, */
 .woocommerce-MyAccount-navigation-link--downloads,
 .woocommerce-MyAccount-navigation-link--edit-address,
+.woocommerce-MyAccount-navigation-link--transactions-history,
 .product_meta,
 .wc-appointments-appointment-cost,
 .woocommerce-Message .woocommerce-Button,
@@ -251,6 +263,12 @@ nav li {
     font-size: 18px;
     padding: 20px 40px;
     float: right;
+}
+main > h2:first-child,
+.woocommerce h2 {
+    font-size: 80px;
+    max-width: 600px;
+    margin-bottom: 80px;
 }
 .ui-datepicker-title {
     text-transform: uppercase;
@@ -401,13 +419,18 @@ main nav#bookable_course_list {
 .rates .header {
     margin-bottom: 100px;
 }
-
+.rate-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+}
 .rate {
-    display: inline-block;
-    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 32%;
     margin: 0 13px 18px 0;
     padding: 0;
     border: 3px solid #000;
+    background: #fffde5;
 }
 .contact h2 {
     position: relative;
@@ -440,8 +463,6 @@ main nav#bookable_course_list {
 }
 .portraits .portrait div {
     width: 189px;
-    height: 189px;
-    background: #222;
 }
 
 /* decorations */
@@ -476,6 +497,26 @@ main nav#bookable_course_list {
     bottom: -100px;
     left: 50%;
 }
+#booking-btn {
+    display: block;
+    position: fixed;
+    width: 300px;
+    height: 200px;
+    top: 0;
+    left: 0;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition: 0.25s;
+}
+#booking-btn.show {
+    visibility: visible;
+    opacity: 1;
+}
+#booking-btn > * {
+    pointer-events: none;
+}
 
 /* helper classes */
 .one-half {
@@ -501,7 +542,11 @@ main nav#bookable_course_list {
 .hide {
     display: none;
 }
-
+@media (max-width: 768px) {
+    .rate {
+        flex: 0 1 50%;
+    }
+}
 @media (max-width: 480px) {
     body {
         padding: 20px 0;
@@ -655,7 +700,7 @@ main nav#bookable_course_list {
     }
     .rate {
         display: block;
-        width: 100%;
+        flex: 0 1 100%;
     }
     .contact .map {
         padding-right: 0;
@@ -671,6 +716,5 @@ main nav#bookable_course_list {
     }
     .portraits .portrait div {
         width: 200px;
-        height: 200px;
     }
 }

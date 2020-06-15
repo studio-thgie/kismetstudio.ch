@@ -49,6 +49,7 @@
         wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-1.11.0.min.js', array(), null, true);
         wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/slick-1.8.1/slick/slick.min.js', array(), '1.8.1', true);
         wp_enqueue_script( 'kismet', get_template_directory_uri() . '/assets/kismet.js', array(), '1.0', true); 
+        wp_enqueue_script( 'booking-btn', get_template_directory_uri() . '/assets/booking-btn.js', array(), '1.0', true); 
     }
 
     add_action( 'wp_enqueue_scripts', 'enqueue_stuff' ); 

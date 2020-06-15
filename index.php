@@ -34,28 +34,28 @@
             <div class="bookable_courses">
                 <?php
 
-                    $courses = get_posts( array(
-                        'post_type' => 'product',
-                        'posts_per_page' => -1
-                    ) );
+                    // $courses = get_posts( array(
+                    //     'post_type' => 'product',
+                    //     'posts_per_page' => -1
+                    // ) );
                     
-                    if ( $courses ) {
+                    // if ( $courses ) {
 
-                        echo '<nav id="bookable_course_list"><ul>';
-                            foreach ( $courses as $course ) :
-                                setup_postdata( $course );
-                                echo '<li class="bookable_course_button" data-target="'.slugify($course->post_title).'">'.$course->post_title.'</li>';
-                            endforeach; 
-                        echo '</ul></nav>';
+                    //     echo '<nav id="bookable_course_list"><ul>';
+                    //         foreach ( $courses as $course ) :
+                    //             setup_postdata( $course );
+                    //             echo '<li class="bookable_course_button" data-target="'.slugify($course->post_title).'">'.$course->post_title.'</li>';
+                    //         endforeach; 
+                    //     echo '</ul></nav>';
 
-                        foreach ( $courses as $course ) :
-                            setup_postdata( $course );
-                            echo '<div class="bookable_course hide '.slugify($course->post_title).'">';
-                                echo do_shortcode('[appointment_form id="'.$course->ID.'"]');
-                            echo '</div>';
-                        endforeach; 
-                        wp_reset_postdata();
-                    }
+                    //     foreach ( $courses as $course ) :
+                    //         setup_postdata( $course );
+                    //         echo '<div class="bookable_course hide '.slugify($course->post_title).'">';
+                    //             echo do_shortcode('[appointment_form id="'.$course->ID.'"]');
+                    //         echo '</div>';
+                    //     endforeach; 
+                    //     wp_reset_postdata();
+                    // }
 
                 ?>
             </div>
@@ -140,7 +140,7 @@
                                 <td>11:00</td> <td></td> <td></td> <td></td> <td></td> <td></td>
                             </tr>
                             <tr>
-                                <td>12:15</td> <td></td> <td></td> <td></td> <td></td> <td></td>
+                                <td>12:10</td> <td></td> <td></td> <td></td> <td></td> <td></td>
                             </tr>
                             <tr>
                                 <td>17:00</td> <td></td> <td></td> <td></td> <td></td> <td></td>
@@ -265,13 +265,17 @@
                 <div class="two-third tar">
                     <div class="portrait">
                         <p class="em">Nina Pigné</p>
-                        <div></div>
+                        <div>
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/nina-02.jpg" alt="Nina Pigné">
+                        </div>
                     </div>
                 </div>
                 <div class="one-third">
                     <div class="portrait">
                         <p class="em">Ahmed Akdeniz</p>
-                        <div></div>
+                        <div>
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ahmet-02.jpg" alt="Ahmed Akdeniz">
+                        </div>
                     </div>
                 </div>
                 <div class="clear"></div>
@@ -290,5 +294,7 @@
             <div class="clear"></div>
         </section>
     </main>
+
+    <a id="booking-btn" href="#Booking"></a>
 
 <?php get_footer(); ?>

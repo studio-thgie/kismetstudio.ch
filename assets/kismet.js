@@ -52,6 +52,14 @@ $(function(){
         var prcntg = 100 / (height - + window.innerHeight) * scrolltop;
 
         $('.decoration img').css('transform', 'translateY('+Math.round(800 - 1600 / 100 * prcntg).toString() + 'px)');
+
+        var _booking_top = $('#Booking').offset().top + $('#Booking').height() / 2;
+
+        if(_booking_top < $(document).scrollTop()){
+            $('#booking-btn').addClass('show');
+        } else {
+            $('#booking-btn').removeClass('show');
+        }
     })
 
     $('.bookable_course_button').on('click', function(){
