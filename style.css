@@ -221,7 +221,44 @@ nav li {
 .woocommerce-form-login {
     max-width: 500px;
 }
-
+.bookable_courses {
+    position: relative;
+    margin-top: 30px;
+}
+.bookable_courses iframe {
+    width: 100%;
+    height: 540px;
+    overflow: hidden;
+}
+.bookable_courses .top_block {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 28px;
+    background: rgb(255,253,229);
+}
+.bookable_courses .bottom_gradient {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 170px;
+    background: rgb(255,253,229);
+    background: linear-gradient(0deg, rgba(255,253,229,1) 0%, rgba(255,253,229,1) 25%, rgba(255,253,229,0) 100%);
+}
+.bookable_courses .bottom_gradient h3 {
+    display: inline-block;
+    padding: 10px;
+    background: #ffe800;
+    transform: rotate(-10deg);
+    position: absolute;
+    left: 50%;
+    margin-left: -160px;
+    top: 20px;
+}
+.bookable_courses .bottom_gradient:hover h3 {
+    background-color: #000;
+    color: #ffe800;
+}
 .bookable_course {
     padding-top: 50px;
 }

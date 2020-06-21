@@ -32,6 +32,13 @@
                 <?php endif; ?>
             </h2>
             <div class="bookable_courses">
+                <iframe src="https://www.supersaas.fr/schedule/kismetstudio/Stundenplan_Kismet?m=1" frameborder="0" scrolling="no"></iframe> 
+                <div class="top_block"></div>
+                <a href="https://www.supersaas.fr/schedule/kismetstudio/Stundenplan_Kismet" target="_blank" class="bottom_gradient">
+                    <h3>
+                        Zur Buchungsplatform
+                    </h3>
+                </a>
                 <?php
 
                     // $courses = get_posts( array(
@@ -282,10 +289,7 @@
             </div>
             <div class="row">
                 <div class="two-third map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2713.906691485375!2d7.243161951405494!3d47.14009407905426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e194d65f4571b%3A0x1d3fe72c9fef39c1!2sNidaugasse%208%2C%202502%20Biel!5e0!3m2!1sen!2sch!4v1583174605841!5m2!1sen!2sch"
-                        width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-                    <!-- <div id="map"></div> -->
+                    <div id="map" style="width: 100%; height: 400px;"></div>
                 </div>
                 <div class="one-third">
                     <?php the_field('contact_desc'); ?>
