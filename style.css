@@ -579,6 +579,58 @@ main nav#bookable_course_list {
 .hide {
     display: none;
 }
+
+.burger {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    right: 20px;
+    top: 10px;
+    width: 30px;
+    height: 40px;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 4000;
+
+    transition: .25s;
+}
+.burger.show {
+    visibility: visible;
+    opacity: 1;
+}
+.burger span {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 3px;
+    top: 8px;
+    left: 0;
+    background-color: #222;
+    pointer-events: none;
+    -webkit-transition: 0.75s;
+    transition: .25s;
+}
+.burger span:nth-child(2),
+.burger span:nth-child(3) {
+    top: 14px;
+}
+.burger span:nth-child(4) {
+    top: 20px;
+}
+.burger.open span:nth-child(1),
+.burger.open span:nth-child(4) {
+    opacity: 0;
+}
+
+.burger.open span:nth-child(2) {
+    transform: rotate(45deg);
+}
+.burger.open span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
 @media (max-width: 768px) {
     .rate {
         flex: 0 1 50%;
@@ -601,6 +653,10 @@ main nav#bookable_course_list {
     }
     p {
         font-size: 16px;
+    }
+    .burger {
+        visibility: visible;
+        opacity: 1;
     }
     .news article {
         margin-left: 0;
@@ -650,48 +706,6 @@ main nav#bookable_course_list {
         font-size: 60px;
     }
 
-    .burger {
-        position: fixed;
-        right: 20px;
-        top: 10px;
-        width: 30px;
-        height: 40px;
-        border: none;
-        background: none;
-        padding: 0;
-        cursor: pointer;
-        z-index: 4000;
-    }
-    .burger span {
-        position: absolute;
-        display: inline-block;
-        width: 100%;
-        height: 3px;
-        top: 8px;
-        left: 0;
-        background-color: #222;
-        pointer-events: none;
-        -webkit-transition: 0.75s;
-        transition: .25s;
-    }
-    .burger span:nth-child(2),
-    .burger span:nth-child(3) {
-        top: 14px;
-    }
-    .burger span:nth-child(4) {
-        top: 20px;
-    }
-    .burger.open span:nth-child(1),
-    .burger.open span:nth-child(4) {
-        opacity: 0;
-    }
-    
-    .burger.open span:nth-child(2) {
-        transform: rotate(45deg);
-    }
-    .burger.open span:nth-child(3) {
-        transform: rotate(-45deg);
-    }
     nav#lang {
         display: none;
     }

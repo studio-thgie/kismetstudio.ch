@@ -33,7 +33,11 @@ $(function(){
     $('.plan').eq(0).click();
 
     $('.burger').on('click', function(){
-        $('main nav, .burger').toggleClass('open');
+        if($(window).width() >= 768){
+            document.getElementById('navigation').scrollIntoView(true);
+        } else {
+            $('main nav, .burger').toggleClass('open');
+        }
     })
     $('main nav a').on('click', function(){
         $('main nav, .burger').removeClass('open');
@@ -53,7 +57,14 @@ $(function(){
 
         $('.decoration img').css('transform', 'translateY('+Math.round(800 - 1600 / 100 * prcntg).toString() + 'px)');
 
+        var _nav_top = $('#navigation').offset().top + $('#navigation').height() + 30;
         var _booking_top = $('#Booking').offset().top + $('#Booking').height() / 2;
+
+        if(_nav_top < $(document).scrollTop() && $(window).width() >= 768){
+            $('.burger').addClass('show');
+        } else {
+            $('.burger').removeClass('show');
+        }
 
         if(_booking_top < $(document).scrollTop()){
             $('#booking-btn').addClass('show');
@@ -71,94 +82,3 @@ $(function(){
 
     $('.bookable_course_button').eq(0).click();
 });
-
-function initMap() {
-
-    if (document.querySelectorAll('#map').length) {
-        document.querySelector('#map').style.height = '400px';
-
-        geocoder = new google.maps.Geocoder();
-        geocoder.geocode({
-            'address': 'Nidaugasse 8, 2502 Bienne'
-        }, function (results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-                var myOptions = {
-                    zoom: 14,
-                    center: results[0].geometry.location,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    styles: [{
-                            "featureType": "administrative",
-                            "elementType": "labels.text.fill",
-                            "stylers": [{
-                                "color": "#444444"
-                            }]
-                        },
-                        {
-                            "featureType": "landscape",
-                            "elementType": "all",
-                            "stylers": [{
-                                "color": "#f2f2f2"
-                            }]
-                        },
-                        {
-                            "featureType": "poi",
-                            "elementType": "all",
-                            "stylers": [{
-                                "visibility": "off"
-                            }]
-                        },
-                        {
-                            "featureType": "road",
-                            "elementType": "all",
-                            "stylers": [{
-                                    "saturation": -100
-                                },
-                                {
-                                    "lightness": 45
-                                }
-                            ]
-                        },
-                        {
-                            "featureType": "road.highway",
-                            "elementType": "all",
-                            "stylers": [{
-                                "visibility": "simplified"
-                            }]
-                        },
-                        {
-                            "featureType": "road.arterial",
-                            "elementType": "labels.icon",
-                            "stylers": [{
-                                "visibility": "off"
-                            }]
-                        },
-                        {
-                            "featureType": "transit",
-                            "elementType": "all",
-                            "stylers": [{
-                                "visibility": "off"
-                            }]
-                        },
-                        {
-                            "featureType": "water",
-                            "elementType": "all",
-                            "stylers": [{
-                                    "color": "#505a65"
-                                },
-                                {
-                                    "visibility": "on"
-                                }
-                            ]
-                        }
-                    ]
-                }
-                map = new google.maps.Map(document.getElementById("map"), myOptions);
-
-                var marker = new google.maps.Marker({
-                    map: map,
-                    position: results[0].geometry.location
-                });
-            }
-        });
-    }
-}
