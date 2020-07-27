@@ -12,6 +12,17 @@ $(function(){
         variableWidth: true
     });
 
+    $('.course-gallery').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        centerMode: true,
+        variableWidth: true,
+        autoplay: true,
+        autoplaySpeed: 5000
+    });
+
     $('.plan').on('click', function(){
         $('.plan').removeClass('active');
         $(this).addClass('active');
@@ -43,6 +54,52 @@ $(function(){
         $('main nav, .burger').removeClass('open');
     })
 
+    /* animated buttons */
+    var booking_btn_params = {
+        container: document.getElementById('booking-btn'),
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        animationData: booking_btn_data
+    };
+    
+    var booking_btn_animation;
+    
+    booking_btn_animation = lottie.loadAnimation(booking_btn_params);
+    
+    document.querySelector('#booking-btn').addEventListener('mouseenter', function(){
+        booking_btn_animation.setDirection(1)
+        booking_btn_animation.play();
+    })
+    
+    document.querySelector('#booking-btn').addEventListener('mouseout', function(){
+        booking_btn_animation.setDirection(-1)
+        booking_btn_animation.play();
+    })
+
+    /* animated buttons */
+    var tryout_btn_params = {
+        container: document.getElementById('tryout-btn'),
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        animationData: tryout_btn_data
+    };
+    
+    var tryout_btn_animation;
+    
+    tryout_btn_animation = lottie.loadAnimation(tryout_btn_params);
+    
+    document.querySelector('#tryout-btn').addEventListener('mouseenter', function(){
+        tryout_btn_animation.setDirection(1)
+        tryout_btn_animation.play();
+    })
+    
+    document.querySelector('#tryout-btn').addEventListener('mouseout', function(){
+        tryout_btn_animation.setDirection(-1)
+        tryout_btn_animation.play();
+    })
+
 
     var body = document.body,
         html = document.documentElement,
@@ -68,8 +125,10 @@ $(function(){
 
         if(_booking_top < $(document).scrollTop()){
             $('#booking-btn').addClass('show');
+            $('#tryout-btn').addClass('show');
         } else {
             $('#booking-btn').removeClass('show');
+            $('#tryout-btn').removeClass('show');
         }
     })
 

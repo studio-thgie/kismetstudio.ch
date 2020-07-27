@@ -41,7 +41,8 @@ h2 {
     transform: rotate(-10deg);
 }
 .courses h2,
-.rates h2 {
+.rates h2,
+.portrait h2 {
     font-size: 190px;
 }
 h3 {
@@ -407,7 +408,7 @@ main nav#bookable_course_list {
     padding-top: 60px;
 }
 .course-descriptions .desc img {
-    max-width: 100%;
+    max-width: 100vw;
 }
 .course-descriptions .desc + .desc {
     margin-top: 125px;
@@ -453,7 +454,8 @@ main nav#bookable_course_list {
     border-right: 0;
 }
 
-.rates .header {
+.rates .header,
+.portrait .header {
     margin-bottom: 100px;
 }
 .rate-wrapper {
@@ -537,21 +539,49 @@ main nav#bookable_course_list {
 #booking-btn {
     display: block;
     position: fixed;
-    width: 300px;
-    height: 200px;
-    top: 0;
-    left: 0;
+    width: 220px;
+    height: 90px;
+    top: 50px;
+    left: 40px;
 
     visibility: hidden;
     opacity: 0;
 
     transition: 0.25s;
 }
-#booking-btn.show {
+#booking-btn > svg {
+    width: 300px !important;
+    height: 200px !important;
+    position: absolute;
+    left: -40px;
+    top: -50px;
+}
+#tryout-btn {
+    display: block;
+    position: fixed;
+    width: 320px;
+    height: 100px;
+    top: 110px;
+    left: 40px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.25s;
+}
+#tryout-btn > svg {
+    width: 390px !important;
+    height: 200px !important;
+    transform: translate3d(0px, 0px, 0px);
+    position: absolute;
+    left: -40px;
+    top: -40px;
+}
+#booking-btn.show,
+#tryout-btn.show {
     visibility: visible;
     opacity: 1;
 }
-#booking-btn > * {
+#booking-btn > *,
+#tryout-btn > * {
     pointer-events: none;
 }
 
@@ -745,7 +775,8 @@ main nav#bookable_course_list {
     .plan {
         padding-left: 0;
     }
-    .rates .header {
+    .rates .header,
+    .portrait .header {
         text-align: left !important;
         margin-bottom: 0;
     }
@@ -767,5 +798,8 @@ main nav#bookable_course_list {
     }
     .portraits .portrait div {
         width: 200px;
+    }
+    #booking-btn, #tryout-btn {
+        display: none;
     }
 }

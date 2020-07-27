@@ -213,7 +213,15 @@
                             <div class="desc">
                                 <h3><?php the_title(); ?></h3>
                                 <p><?php the_field('claim') ?></p>
-                                <img src="<?php echo esc_url(get_field('image')['sizes']['plans']); ?>"/>
+                                <?php if(count(get_field('image')) == 1): ?>
+                                    <img src="<?php echo esc_url(get_field('image')[0]['sizes']['plans']); ?>"/>
+                                <?php else: ?>
+                                    <div class="course-gallery clear">
+                                        <?php foreach( get_field('image') as $image ): ?>
+                                            <div><img src="<?php echo esc_url($image['sizes']['plans']); ?>"/></div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                <?php endif; ?>
                         </div>
                         <?php
                         endforeach; 
@@ -225,6 +233,13 @@
         <div class="decoration rates">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tri.svg">    
         </div>
+        <section id="Portrait" class="portrait">
+            <div class="tar header">
+                <h2>Portrait</h2>
+            </div>
+            <div class="portrait-wrapper">
+            </div>
+        </section>
         <section id="Tarife" class="rates">
             <div class="tar header">
                 <h2>
@@ -300,5 +315,6 @@
     </main>
 
     <a id="booking-btn" href="#Booking"></a>
+    <a id="tryout-btn" href="#Tarife"></a>
 
 <?php get_footer(); ?>
