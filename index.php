@@ -238,6 +238,13 @@
                 <h2>Portrait</h2>
             </div>
             <div class="portrait-wrapper">
+                <div class="video-gallery clear">
+                    <?php foreach( get_field('portrait') as $video ): ?>
+                        <div>
+                            <?php echo $video['video']; ?>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
         </section>
         <section id="Tarife" class="rates">

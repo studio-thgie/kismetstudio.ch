@@ -421,7 +421,9 @@ main nav#bookable_course_list {
 .gallery div img {
     height: 100%;
 }
-
+.slick-prev::before, .slick-next::before {
+    color: black !important;
+}
 .plan {
     padding-left: 70px;
     cursor: pointer;

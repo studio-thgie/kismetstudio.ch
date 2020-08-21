@@ -9,7 +9,8 @@ $(function(){
         speed: 300,
         slidesToShow: 1,
         centerMode: true,
-        variableWidth: true
+        variableWidth: true,
+        arrows: false
     });
 
     $('.course-gallery').slick({
@@ -20,7 +21,19 @@ $(function(){
         centerMode: true,
         variableWidth: true,
         autoplay: true,
-        autoplaySpeed: 5000
+        autoplaySpeed: 5000,
+        arrows: false
+    });
+
+    $('.video-gallery').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        centerMode: true,
+        variableWidth: true,
+        draggable: false,
+        arrows: true
     });
 
     $('.plan').on('click', function(){
