@@ -16,15 +16,16 @@
     <main>
         <nav id="navigation">
             <ul>
-                <li><a href="#Booking">Booking</a></li>
-                <li><a href="#News">News</a></li>
-                <li><a href="#Studio">Studio</a></li>
-                <li><a href="#Kurse">Kurse</a></li>
-                <li><a href="#Tarife">Tarife</a></li>
-                <li><a href="#Kontakt">Kontakt</a></li>
+                <li><a href="#<?php sanitize_title(the_field('booking_title')); ?>"><?php the_field('booking_title'); ?></a></li>
+                <li><a href="#<?php sanitize_title(the_field('news_title')); ?>"><?php the_field('news_title'); ?></a></li>
+                <li><a href="#<?php sanitize_title(the_field('studio_title')); ?>"><?php the_field('studio_title'); ?></a></li>
+                <li><a href="#<?php sanitize_title(the_field('courses_title')); ?>"><?php the_field('courses_title'); ?></a></li>
+                <li><a href="#<?php sanitize_title(the_field('portrait_title')); ?>"><?php the_field('portrait_title'); ?></a></li>
+                <li><a href="#<?php sanitize_title(the_field('rates_title')); ?>"><?php the_field('rates_title'); ?></a></li>
+                <li><a href="#<?php sanitize_title(the_field('contact_title')); ?>"><?php the_field('contact_title'); ?></a></li>
             </ul>
         </nav>
-        <section id="Booking" class="booking">
+        <section id="<?php the_field('booking_title'); ?>" class="booking">
             <h2>
                 Booking
                 <?php if(get_field('booking_subtitle')): ?>
@@ -35,9 +36,7 @@
                 <iframe src="https://www.supersaas.fr/schedule/kismetstudio/Stundenplan_Kismet?m=1" frameborder="0" scrolling="no"></iframe> 
                 <div class="top_block"></div>
                 <a href="https://www.supersaas.fr/schedule/kismetstudio/Stundenplan_Kismet" target="_blank" class="bottom_gradient">
-                    <h3>
-                        Zur Buchungsplatform
-                    </h3>
+                    <h3><?php the_field('booking_plattform_label'); ?></h3>
                 </a>
                 <?php
 
@@ -70,7 +69,7 @@
         <div class="decoration news">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tri.svg">    
         </div>
-        <section id="News" class="news">
+        <section id="<?php the_field('news_title'); ?>" class="news">
             <h2>
                 News
                 <?php if(get_field('news_subtitle')): ?>
@@ -96,7 +95,7 @@
                 }
             ?>
         </section>
-        <section id="Studio" class="studio">
+        <section id="<?php the_field('studio_title'); ?>" class="studio">
             <h2>
                 Studio
                 <?php if(get_field('studio_subtitle')): ?>
@@ -121,7 +120,7 @@
                 </div>
                 <?php endif; ?>
         </section>
-        <section id="Kurse" class="courses">
+        <section id="<?php the_field('courses_title'); ?>" class="courses">
             <h2>
                 Kurse
                 <?php if(get_field('courses_subtitle')): ?>
@@ -233,7 +232,7 @@
         <div class="decoration rates">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tri.svg">    
         </div>
-        <section id="Portrait" class="portrait">
+        <section id="<?php the_field('portrait_title'); ?>" class="portrait">
             <div class="tar header">
                 <h2>Portrait</h2>
             </div>
@@ -247,7 +246,7 @@
                 </div>
             </div>
         </section>
-        <section id="Tarife" class="rates">
+        <section id="<?php the_field('rates_title'); ?>" class="rates">
             <div class="tar header">
                 <h2>
                     Tarife
@@ -283,7 +282,7 @@
         <div class="decoration contact">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tri.svg">    
         </div>
-        <section id="Kontakt" class="contact">
+        <section id="<?php the_field('contact_title'); ?>" class="contact">
             <h2>
                 Kontakt
                 <?php if(get_field('contact_subtitle')): ?>
@@ -321,7 +320,7 @@
         </section>
     </main>
 
-    <a id="booking-btn" href="#Booking"></a>
-    <a id="tryout-btn" href="#Tarife"></a>
+    <a id="tryout-btn" href="mailto:info@kismetstudio.ch?subject=<?php echo rawurlencode(get_field('tryout_subject')); ?>"></a>
+    <a id="booking-btn" href="#<?php sanitize_title(the_field('booking_title')); ?>"></a>
 
 <?php get_footer(); ?>

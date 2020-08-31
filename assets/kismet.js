@@ -129,6 +129,7 @@ $(function(){
 
         var _nav_top = $('#navigation').offset().top + $('#navigation').height() + 30;
         var _booking_top = $('#Booking').offset().top + $('#Booking').height() / 2;
+        var _navigation_top = $('.hero-header').offset().top + $('.hero-header').height() / 2;
 
         if(_nav_top < $(document).scrollTop() && $(window).width() >= 768){
             $('.burger').addClass('show');
@@ -138,9 +139,13 @@ $(function(){
 
         if(_booking_top < $(document).scrollTop()){
             $('#booking-btn').addClass('show');
-            $('#tryout-btn').addClass('show');
         } else {
             $('#booking-btn').removeClass('show');
+        }
+
+        if(_navigation_top < $(document).scrollTop()){
+            $('#tryout-btn').addClass('show');
+        } else {
             $('#tryout-btn').removeClass('show');
         }
     })

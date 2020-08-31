@@ -543,12 +543,11 @@ main nav#bookable_course_list {
     position: fixed;
     width: 220px;
     height: 90px;
-    top: 50px;
+    top: 140px;
     left: 40px;
 
     visibility: hidden;
     opacity: 0;
-
     transition: 0.25s;
 }
 #booking-btn > svg {
@@ -563,8 +562,9 @@ main nav#bookable_course_list {
     position: fixed;
     width: 320px;
     height: 100px;
-    top: 110px;
+    top: 50px;
     left: 40px;
+
     visibility: hidden;
     opacity: 0;
     transition: 0.25s;
