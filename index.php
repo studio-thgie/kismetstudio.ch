@@ -159,6 +159,11 @@
                             </tr>
                         </tbody>
                     </table>
+                    <div class="courses-covid">
+                        <a href="#<?php sanitize_title(the_field('booking_title')); ?>">
+                            <?php the_field('courses_covid'); ?>
+                        </a>
+                    </div>
                 </div>
                 <div class="one-half">
                     <script>
@@ -168,7 +173,8 @@
                     </script>
                     <?php
                         $courses = get_posts( array(
-                            'post_type' => 'course'
+                            'post_type' => 'course',
+                            'posts_per_page' => -1
                         ) );
                         
                         if ( $courses ) {
@@ -203,7 +209,8 @@
             <div class="clear course-descriptions">
                 <?php
                     $courses = get_posts( array(
-                        'post_type' => 'course'
+                        'post_type' => 'course',
+                        'posts_per_page' => -1
                     ) );
                     
                     if ( $courses ) {
@@ -258,7 +265,8 @@
             <div class="rate-wrapper">
                 <?php
                     $rates = get_posts( array(
-                        'post_type' => 'rate'
+                        'post_type' => 'rate',
+                        'posts_per_page' => -1
                     ) );
                     
                     if ( $rates ) {
@@ -269,7 +277,7 @@
                                 <h3><?php the_title(); ?></h3>
                                 <p class="tac">À partir de</p>
                                 <p class="price">CHF <?php the_field('price') ?></p>
-                                <?php the_content(); ?>
+                                <div class="rate_content"><?php the_content(); ?></div>
                                 <h3><a href="#Kontakt">Contactez-nous</a></h3>
                             </section>
                         <?php

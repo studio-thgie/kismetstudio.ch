@@ -71,6 +71,7 @@ h3 {
 }
 .rate h3:last-child {
     margin: auto 0 0;
+    padding: 20px 0;
 }
 
 p {
@@ -88,16 +89,24 @@ p.meta {
 .rate p {
     font-size: 18px;
     padding: 0 15px;
+    margin-bottom: 0;
 }
 .rate p + p {
     margin-top: 5px;
 }
 .rate p.price {
     font-size: 38px;
-
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
 }
 .rate p.price + p {
     margin-top: 15px;
+}
+.rate .rate_content p {
+    font-style: normal;
+    line-height: 1.5;
+    margin-bottom: 20px;
 }
 .contact p,
 p.em {
@@ -228,7 +237,7 @@ nav li {
 }
 .bookable_courses iframe {
     width: 100%;
-    height: 540px;
+    height: 400px;
     overflow: hidden;
 }
 .bookable_courses .top_block {
@@ -240,9 +249,9 @@ nav li {
 }
 .bookable_courses .bottom_gradient {
     position: absolute;
-    bottom: 0;
+    top: 0;
     width: 100%;
-    height: 170px;
+    height: 100%;
     background: rgb(255,253,229);
     background: linear-gradient(0deg, rgba(255,253,229,1) 0%, rgba(255,253,229,1) 25%, rgba(255,253,229,0) 100%);
 }
@@ -252,9 +261,9 @@ nav li {
     background: #ffe800;
     transform: rotate(-10deg);
     position: absolute;
+    top: 40%;
     left: 50%;
     margin-left: -160px;
-    top: 20px;
 }
 .bookable_courses .bottom_gradient:hover h3 {
     background-color: #000;
@@ -402,6 +411,7 @@ main nav#bookable_course_list {
     left: 100px;
 }
 .courses .visual-plan {
+    position: relative;
     margin-top: 200px;
 }
 .course-descriptions {
@@ -412,6 +422,21 @@ main nav#bookable_course_list {
 }
 .course-descriptions .desc + .desc {
     margin-top: 125px;
+}
+.courses-covid {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 80%;
+    background: #000;
+    font-size: 36px;
+    font-weight: 700;
+    padding: 20px 30px 24px;
+    transform: rotate(-10deg);
+}
+.courses-covid a {
+    display: block;
+    color: #fff;
 }
 
 .gallery div {
@@ -667,6 +692,11 @@ main nav#bookable_course_list {
     .rate {
         flex: 0 1 50%;
     }
+    .one-half, .one-third, .two-third {
+        display: block;
+        float: none;
+        width: 100%;
+    }
 }
 @media (max-width: 480px) {
     body {
@@ -692,11 +722,6 @@ main nav#bookable_course_list {
     }
     .news article {
         margin-left: 0;
-    }
-    .one-half, .one-third, .two-third {
-        display: block;
-        float: none;
-        width: 100%;
     }
 
     header {
