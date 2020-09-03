@@ -158,4 +158,11 @@ $(function(){
     })
 
     $('.bookable_course_button').eq(0).click();
+
+    $('.diplomes-btn').on('click', function(){
+
+        $(this).siblings('.diplomes').toggleClass('hide');
+    
+    });
+        
 });

@@ -439,6 +439,25 @@ main nav#bookable_course_list {
     color: #fff;
 }
 
+.single-portrait-wrapper {
+    padding: 40px;
+}
+.single-portrait-wrapper:nth-child(odd) {
+    text-align: right;
+}
+.single-portrait-wrapper .portrait-image {
+    display: inline-block;
+    width: 200px;
+    height: 230px;
+    background-size: cover;
+    background-position: center;
+
+    margin-bottom: 20px;
+}
+.single-portrait-wrapper .diplomes {
+    margin-top: 20px;
+}
+
 .gallery div {
     height: 500px;
     margin-right: 15px;
@@ -528,7 +547,10 @@ main nav#bookable_course_list {
     text-align: left;
 }
 .portraits .portrait div {
-    width: 189px;
+    width: 200px;
+    height: 230px;
+    background-size: cover;
+    background-position: center;
 }
 
 /* decorations */
@@ -635,6 +657,10 @@ main nav#bookable_course_list {
 }
 .hide {
     display: none;
+}
+
+.mb0 {
+    margin-bottom: 0 !important;
 }
 
 .burger {
@@ -801,6 +827,9 @@ main nav#bookable_course_list {
     }
     .plan {
         padding-left: 0;
+    }
+    .single-portrait-wrapper {
+        padding: 0;
     }
     .rates .header,
     .portrait .header {

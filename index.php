@@ -251,6 +251,25 @@
                         </div>
                     <?php endforeach; ?>
                 </div>
+                <div class="row">
+                    <?php foreach( get_field('team') as $team ): ?>
+                    <div class="one-half single-portrait-wrapper">
+                        <div class="portrait-image" style="background-image: url(<?php echo $team['portrait']['url']; ?>);"></div>
+                        <p class="em mb0"><?php echo $team['name']; ?></p>
+                        <?php if($team['languages'] != ''): ?><p><?php echo $team['languages']; ?></p><?php endif; ?>
+                        <?php if($team['phone'] != ''): ?><p class="mb0"><b><?php echo $team['phone']; ?></b></p><?php endif; ?>
+                        <?php if($team['email'] != ''): ?><p><b><?php echo $team['email']; ?></b></p><?php endif; ?>
+                        <?php if($team['text'] != ''): ?><?php echo $team['text']; ?><?php endif; ?>
+                        <?php if($team['diplomes'] != ''): ?>
+                            <a href="javascript:;" class="diplomes-btn"><b>Diplomes ⬇︎</b></a>
+                            <div class="diplomes hide">
+                                <?php echo $team['diplomes']; ?>
+                            </div>    
+                        <?php endif; ?>
+                    </div>
+                    <?php endforeach; ?>
+                    <div class="clear"></div>
+                </div>
             </div>
         </section>
         <section id="<?php the_field('rates_title'); ?>" class="rates">
@@ -297,24 +316,13 @@
                     <p class="em"><?php the_field('contact_subtitle'); ?></p>
                 <?php endif; ?>
             </h2>
-            <div class="row portraits">
-                <div class="two-third tar">
+            <div class="portraits tar">
+                <?php foreach( get_field('team') as $team ): ?>
                     <div class="portrait">
-                        <p class="em">Nina Pigné</p>
-                        <div>
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/nina-02.jpg" alt="Nina Pigné">
-                        </div>
+                        <p class="em"><?php echo $team['name']; ?></p>
+                        <div style="background-image: url(<?php echo $team['portrait']['url']; ?>);"></div>
                     </div>
-                </div>
-                <div class="one-third">
-                    <div class="portrait">
-                        <p class="em">Ahmed Akdeniz</p>
-                        <div>
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ahmet-02.jpg" alt="Ahmed Akdeniz">
-                        </div>
-                    </div>
-                </div>
-                <div class="clear"></div>
+                <?php endforeach; ?>
             </div>
             <div class="row">
                 <div class="two-third map">
