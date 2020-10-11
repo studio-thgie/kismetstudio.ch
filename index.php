@@ -330,6 +330,11 @@
                 </div>
                 <div class="one-third">
                     <?php the_field('contact_desc'); ?>
+                    <div class="social-media">
+                        <a target="_blank" href="https://www.instagram.com/kismetstudiopilates/"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Instagram.svg"></a>
+                        <a target="_blank" href="https://www.facebook.com/pg/kismetstudio/about/"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Facebook.svg"></a>
+                        <a target="_blank" href="https://www.youtube.com/channel/UCosei1621m8QyltHxoOC8cA"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Youtube.svg"></a>
+                    </div>
                 </div>
             </div>
             <div class="clear"></div>

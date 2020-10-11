@@ -714,6 +714,18 @@ main nav#bookable_course_list {
     transform: rotate(-45deg);
 }
 
+.social-media {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+.social-media a {
+    display: inline-block;
+    margin-right: 15px;
+}
+.social-media img {
+    width: 34px;
+}
+
 @media (max-width: 768px) {
     .rate {
         flex: 0 1 50%;
