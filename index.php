@@ -25,9 +25,9 @@
                 <li><a href="#<?php sanitize_title(the_field('contact_title')); ?>"><?php the_field('contact_title'); ?></a></li>
             </ul>
         </nav>
-        <section id="<?php the_field('booking_title'); ?>" class="booking">
+        <section id="<?php sanitize_title(the_field('booking_title')); ?>" class="booking">
             <h2>
-                Booking
+                <?php the_field('booking_title'); ?>
                 <?php if(get_field('booking_subtitle')): ?>
                     <p class="em"><?php the_field('booking_subtitle'); ?></p>
                 <?php endif; ?>
@@ -69,9 +69,9 @@
         <div class="decoration news">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tri.svg">    
         </div>
-        <section id="<?php the_field('news_title'); ?>" class="news">
+        <section id="<?php sanitize_title(the_field('booking_title')); ?>" class="news">
             <h2>
-                News
+                <?php sanitize_title(the_field('news_title')); ?>
                 <?php if(get_field('news_subtitle')): ?>
                     <p class="em"><?php the_field('news_subtitle'); ?></p>
                 <?php endif; ?>
@@ -95,9 +95,9 @@
                 }
             ?>
         </section>
-        <section id="<?php the_field('studio_title'); ?>" class="studio">
+        <section id="<?php sanitize_title(the_field('studio_title')); ?>" class="studio">
             <h2>
-                Studio
+                <?php the_field('studio_title'); ?>
                 <?php if(get_field('studio_subtitle')): ?>
                     <p class="em"><?php the_field('studio_subtitle'); ?></p>
                 <?php endif; ?>
@@ -120,9 +120,9 @@
                 </div>
                 <?php endif; ?>
         </section>
-        <section id="<?php the_field('courses_title'); ?>" class="courses">
+        <section id="<?php sanitize_title(the_field('courses_title')); ?>" class="courses">
             <h2>
-                Kurse
+                <?php the_field('courses_title'); ?>
                 <?php if(get_field('courses_subtitle')): ?>
                     <p class="em"><?php the_field('courses_subtitle'); ?></p>
                 <?php endif; ?>
@@ -239,9 +239,9 @@
         <div class="decoration rates">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tri.svg">    
         </div>
-        <section id="<?php the_field('portrait_title'); ?>" class="portrait">
+        <section id="<?php sanitize_title(the_field('portrait_title')); ?>" class="portrait">
             <div class="tar header">
-                <h2>Portrait</h2>
+                <h2><?php the_field('portrait_title'); ?></h2>
             </div>
             <div class="portrait-wrapper">
                 <div class="video-gallery clear">
@@ -272,10 +272,10 @@
                 </div>
             </div>
         </section>
-        <section id="<?php the_field('rates_title'); ?>" class="rates">
+        <section id="<?php sanitize_title(the_field('rates_title')); ?>" class="rates">
             <div class="tar header">
                 <h2>
-                    Tarife
+                    <?php the_field('rates_title'); ?>
                     <?php if(get_field('rate_subtitle')): ?>
                     <p class="em"><?php the_field('rate_subtitle'); ?></p>
                     <?php endif; ?>
@@ -309,9 +309,9 @@
         <div class="decoration contact">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tri.svg">    
         </div>
-        <section id="<?php the_field('contact_title'); ?>" class="contact">
+        <section id="<?php sanitize_title(the_field('contact_title')); ?>" class="contact">
             <h2>
-                Kontakt
+                <?php sanitize_title(the_field('contact_title')); ?>
                 <?php if(get_field('contact_subtitle')): ?>
                     <p class="em"><?php the_field('contact_subtitle'); ?></p>
                 <?php endif; ?>
