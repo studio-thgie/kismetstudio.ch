@@ -23,6 +23,21 @@
                 <li><a href="#<?php sanitize_title(the_field('portrait_title')); ?>"><?php the_field('portrait_title'); ?></a></li>
                 <li><a href="#<?php sanitize_title(the_field('rates_title')); ?>"><?php the_field('rates_title'); ?></a></li>
                 <li><a href="#<?php sanitize_title(the_field('contact_title')); ?>"><?php the_field('contact_title'); ?></a></li>
+                <li id="lang-mobile">
+                    <nav aria-label="Sprachwahl" id="lang">
+                        <ul>
+                            <?php foreach(icl_get_languages() as $lang): ?>
+                                <li <?php if($lang['active']){ echo 'active'; } ?>" ><a href="<?php echo $lang['url']; ?>"><?php echo $lang['language_code']; ?></a></li>
+                            <?php endforeach; ?>
+                            <!-- <li>&mdash;</li> -->
+                            <?php if(is_user_logged_in('/')): ?>
+                                <!-- <li><a href="<?php echo wp_logout_url(); ?>">Logout</a></li>
+                                <li>&mdash;</li> -->
+                            <?php endif; ?>
+                            <!-- <li><a href="/mein-konto">Konto</a></li> -->
+                        </ul>
+                    </nav>
+                </li>
             </ul>
         </nav>
         <section id="<?php sanitize_title(the_field('booking_title')); ?>" class="booking">
@@ -294,10 +309,10 @@
                             
                             <section class="rate">
                                 <h3><?php the_title(); ?></h3>
-                                <p class="tac">À partir de</p>
-                                <p class="price">CHF <?php the_field('price') ?></p>
+                                <p class="tac"><? _e('from','kismet'); ?></p>
+                                <p class="price"><? _e('chf','kismet'); ?> <?php the_field('price') ?></p>
                                 <div class="rate_content"><?php the_content(); ?></div>
-                                <h3><a href="#Kontakt">Contactez-nous</a></h3>
+                                <h3><a href="#Kontakt"><? _e('contact-us','kismet'); ?></a></h3>
                             </section>
                         <?php
                         endforeach; 
@@ -327,6 +342,9 @@
             <div class="row">
                 <div class="two-third map">
                     <div id="map" style="width: 100%; height: 400px;"></div>
+                    <a href="https://www.google.com/maps/dir//Kismet+Pilates+Studio,+Rue+de+Nidau+8,+2502+Bienne" target="_blank" id="directions-btn">
+                        <?php _e('directions', 'kismet'); ?>
+                    </a>
                 </div>
                 <div class="one-third">
                     <?php the_field('contact_desc'); ?>

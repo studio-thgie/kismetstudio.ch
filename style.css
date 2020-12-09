@@ -164,6 +164,9 @@ nav li {
 #lang li:nth-child(3) {
     margin-left: 10px;
 }
+#lang-mobile {
+    display: none;
+}
 #navigation ul {
     display: block;
     width: 440px;
@@ -176,6 +179,9 @@ nav li {
     transform: rotate(-10deg);
     font-weight: bold;
     text-transform: uppercase;
+}
+#navigation li li {
+    transform: none;
 }
 #bookable_course_list ul {
     max-width: 700px;
@@ -250,6 +256,7 @@ nav li {
 .bookable_courses .bottom_gradient {
     position: absolute;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background: rgb(255,253,229);
@@ -633,6 +640,19 @@ main nav#bookable_course_list {
 #tryout-btn > * {
     pointer-events: none;
 }
+#directions-btn {
+    background: #FFE800;
+    font-size: 36px;
+    font-weight: 700;
+    padding: 14px 30px 16px;
+    color: #000;
+    display: inline-block;
+    margin-top: 20px;
+}
+#directions-btn:hover {
+    background: #000;
+    color: #FFE800;
+}
 
 /* helper classes */
 .one-half {
@@ -781,14 +801,14 @@ main nav#bookable_course_list {
         top: 0;
         width: 100%;
         height: 100%;
-        padding-top: 100px;
+        padding-top: 60px;
         background: #FFFDE5;
 
         visibility: hidden;
         opacity: 0;
         transition: .25s;
 
-        z-index: 2000;
+        z-index: 3000;
     }
     main nav#navigation.open {
         visibility: visible;
@@ -798,11 +818,20 @@ main nav#bookable_course_list {
         width: 260px;
     }
     #navigation li {
-        font-size: 60px;
+        font-size: 40px;
     }
 
     nav#lang {
         display: none;
+    }
+    #lang-mobile {
+        display: block;
+    }
+    #lang-mobile nav {
+        display: block;
+        padding: 20px 0 0;
+        position: relative;
+        left: -7px;
     }
 
     main section.studio,
@@ -867,7 +896,28 @@ main nav#bookable_course_list {
     .portraits .portrait div {
         width: 200px;
     }
-    #booking-btn, #tryout-btn {
-        display: none;
+    #booking-btn {
+        width: 90px;
+        height: 40px;
+        top: 50px;
+        left: 10px;
+    }
+    #booking-btn > svg {
+        width: 110px !important;
+        height: 60px !important;
+        left: -15px;
+        top: -10px;
+    }
+    #tryout-btn {
+        width: 115px;
+        height: 40px;
+        top: 10px;
+        left: 10px;
+    }
+    #tryout-btn > svg {
+        width: 160px !important;
+        height: 60px !important;
+        left: -26px;
+        top: -7px;
     }
 }
