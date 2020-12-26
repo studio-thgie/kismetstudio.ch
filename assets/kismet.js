@@ -25,6 +25,7 @@ $(function(){
         arrows: false
     });
 
+    /*
     $('.video-gallery').slick({
         dots: true,
         infinite: true,
@@ -35,6 +36,23 @@ $(function(){
         draggable: false,
         arrows: true
     });
+    */
+    $('.video-gallery').owlCarousel({
+        items:1,
+        merge:true,
+        loop:true,
+        margin:5,
+        video:true,
+        center:true,
+        responsive:{
+            480:{
+                items:2
+            },
+            600:{
+                items:4
+            }
+        }
+    })
 
     $('.plan').on('click', function(){
         $('.plan').removeClass('active');

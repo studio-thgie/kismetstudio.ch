@@ -446,6 +446,10 @@ main nav#bookable_course_list {
     color: #fff;
 }
 
+.video-gallery .item-video {
+    height: 400px;
+}
+
 .single-portrait-wrapper {
     padding: 40px;
 }

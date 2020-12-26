@@ -259,9 +259,9 @@
                 <h2><?php the_field('portrait_title'); ?></h2>
             </div>
             <div class="portrait-wrapper">
-                <div class="video-gallery clear">
+                <div class="video-gallery owl-carousel owl-theme">
                     <?php foreach( get_field('portrait') as $video ): ?>
-                        <div>
+                        <div class="item-video" data-merge="3">
                             <?php echo $video['video']; ?>
                         </div>
                     <?php endforeach; ?>

@@ -42,12 +42,15 @@
         wp_enqueue_style( 'fonts', 'https://fonts.googleapis.com/css?family=Roboto:300,300i,700,700i&display=swap', array(), '1.0', 'all');
         wp_enqueue_style( 'slick', get_template_directory_uri() . '/assets/slick-1.8.1/slick/slick.css', array(), '1.8.1', 'all');
         wp_enqueue_style( 'slick-theme', get_template_directory_uri() . '/assets/slick-1.8.1/slick/slick-theme.css', array(), '1.8.1', 'all');
+        wp_enqueue_style( 'owlcarousel', get_template_directory_uri() . '/assets/owlcarousel2-2.3.4/assets/owl.carousel.min.css', array(), '1.8.1', 'all');
+        wp_enqueue_style( 'owlcarousel-theme', get_template_directory_uri() . '/assets/owlcarousel2-2.3.4/assets/owl.theme.default.min.css', array(), '1.8.1', 'all');
         wp_enqueue_style( 'style', get_stylesheet_uri() );
 
         wp_deregister_script('jquery');
 
         wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-1.11.0.min.js', array(), null, true);
         wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/slick-1.8.1/slick/slick.min.js', array(), '1.8.1', true);
+        wp_enqueue_script( 'owlcarousel', get_template_directory_uri() . '/assets/owlcarousel2-2.3.4/owl.carousel.min.js', array(), '2..3.4', true);
         wp_enqueue_script( 'lottie', get_template_directory_uri() . '/assets/lottie.js', array(), '1.0', true);
         wp_enqueue_script( 'booking-btn', get_template_directory_uri() . '/assets/booking-btn.js', array(), '1.0', true); 
         if( pll_current_language() == 'fr' ) {
