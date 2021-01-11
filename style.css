@@ -16,6 +16,7 @@
 }
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 
@@ -119,7 +120,7 @@ a {
     text-decoration: none;
 
     transition: .25s;
-
+    font-style: italic;
 }
 a:hover {
     color: #FFE800;
@@ -189,7 +190,8 @@ nav li {
 }
 #bookable_course_list li {
 	display: inline-block;
-	margin-right: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
 	font-size: 1.6em;
 	font-weight: bold;
 	border: 3px solid black;
