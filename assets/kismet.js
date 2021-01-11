@@ -3,6 +3,12 @@ $(function(){
 
     $('body').addClass('loaded');
 
+    $('.video-wrapper').fitVids();
+
+    $('.video-btn').on('click', function(){
+        $('.'+$(this).data('target')).toggleClass('open');
+    });
+
     $('.gallery').slick({
         dots: true,
         infinite: true,
@@ -37,7 +43,7 @@ $(function(){
         arrows: true
     });
     */
-    $('.video-gallery').owlCarousel({
+    /*$('.video-gallery').owlCarousel({
         items:1,
         merge:true,
         loop:true,
@@ -52,7 +58,7 @@ $(function(){
                 items:4
             }
         }
-    })
+    })*/
 
     $('.plan').on('click', function(){
         $('.plan').removeClass('active');

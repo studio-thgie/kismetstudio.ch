@@ -470,6 +470,29 @@ main nav#bookable_course_list {
 .single-portrait-wrapper .diplomes {
     margin-top: 20px;
 }
+.portrait-videos .video-wrapper {
+    overflow: hidden;
+    max-height: 0;
+    transition: .25s;
+}
+.portrait-videos .video-wrapper.open {
+    max-height: 1000px;
+}
+a.video-btn {
+    display: inline-block;
+    background: #FFE800;
+    font-weight: 700;
+    padding: 11px 24px 12px;
+    color: #000;
+    display: inline-block;
+    margin-bottom: 30px;
+    transform: rotate(-14deg);
+    float: right;
+}
+a.video-btn:hover {
+    background: #000;
+    color: #FFE800;
+}
 
 .gallery div {
     height: 500px;

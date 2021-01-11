@@ -125,7 +125,7 @@
                     <?php the_field('studio_desc'); ?>
                 </div>
             </div>
-            <?php 
+            <?php /*
                 $images = get_field('studio_gallery');
                 if( $images ): ?>
                 <div class="gallery clear">
@@ -133,7 +133,10 @@
                         <div><img src="<?php echo esc_url($image['sizes']['gallery']); ?>"/></div>
                     <?php endforeach; ?>
                 </div>
-                <?php endif; ?>
+                <?php endif; */ ?>
+            <div class="video-wrapper clear">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/g0Iz5bVx5qk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </section>
         <section id="<?php sanitize_title(the_field('courses_title')); ?>" class="courses">
             <h2>
@@ -259,13 +262,6 @@
                 <h2><?php the_field('portrait_title'); ?></h2>
             </div>
             <div class="portrait-wrapper">
-                <div class="video-gallery owl-carousel owl-theme">
-                    <?php foreach( get_field('portrait') as $video ): ?>
-                        <div class="item-video" data-merge="3">
-                            <?php echo $video['video']; ?>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
                 <div class="row">
                     <?php foreach( get_field('team') as $team ): ?>
                     <div class="one-half single-portrait-wrapper">
@@ -281,9 +277,17 @@
                                 <?php echo $team['diplomes']; ?>
                             </div>    
                         <?php endif; ?>
+                        <?php if(strpos($team['name'], 'Ahmet') !== false): ?>
+                            <a href="javascript:;" class="btn video-btn" data-target="video-ahmet">Video Portrait Ahmet</a>
+                        <?php endif; ?>
                     </div>
                     <?php endforeach; ?>
                     <div class="clear"></div>
+                </div>
+            </div>
+            <div class="portrait-videos">
+                <div class="video-wrapper clear video-ahmet">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/x9EqWj6wo7s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
