@@ -84,7 +84,7 @@
         <div class="decoration news">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tri.svg">    
         </div>
-        <section id="<?php sanitize_title(the_field('booking_title')); ?>" class="news">
+        <section id="<?php sanitize_title(the_field('news_title')); ?>" class="news">
             <h2>
                 <?php sanitize_title(the_field('news_title')); ?>
                 <?php if(get_field('news_subtitle')): ?>
@@ -125,7 +125,7 @@
                     <?php the_field('studio_desc'); ?>
                 </div>
             </div>
-            <?php /*
+            <?php
                 $images = get_field('studio_gallery');
                 if( $images ): ?>
                 <div class="gallery clear">
@@ -133,10 +133,7 @@
                         <div><img src="<?php echo esc_url($image['sizes']['gallery']); ?>"/></div>
                     <?php endforeach; ?>
                 </div>
-                <?php endif; */ ?>
-            <div class="video-wrapper clear">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/g0Iz5bVx5qk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+            <?php endif; ?>
         </section>
         <section id="<?php sanitize_title(the_field('courses_title')); ?>" class="courses">
             <h2>
