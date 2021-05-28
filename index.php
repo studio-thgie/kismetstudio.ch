@@ -125,6 +125,13 @@
                     <?php the_field('studio_desc'); ?>
                 </div>
             </div>
+            
+            <?php if(get_field('studio_video')): ?>
+            <div class="video-wrapper clear">
+                <?php the_field('studio_video'); ?>
+            </div>
+            <br>
+            <?php endif; ?>
             <?php
                 $images = get_field('studio_gallery');
                 if( $images ): ?>
