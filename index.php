@@ -11,7 +11,7 @@
 ?>
 
 
-    <div class="hero-header" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/hero-header.png');">
+    <div class="hero-header" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/hero-header.jpg');">
     </div>
     <main>
         <nav id="navigation">
@@ -275,14 +275,18 @@
                         <?php if($team['phone'] != ''): ?><p class="mb0"><b><?php echo $team['phone']; ?></b></p><?php endif; ?>
                         <?php if($team['email'] != ''): ?><p><b><?php echo $team['email']; ?></b></p><?php endif; ?>
                         <?php if($team['text'] != ''): ?><?php echo $team['text']; ?><?php endif; ?>
-                        <?php if($team['diplomes'] != ''): ?>
-                            <a href="javascript:;" class="diplomes-btn"><b>Diplomes ⬇︎</b></a>
-                            <div class="diplomes hide">
-                                <?php echo $team['diplomes']; ?>
-                            </div>    
-                        <?php endif; ?>
                         <?php if(strpos($team['name'], 'Ahmet') !== false): ?>
-                            <a href="javascript:;" class="btn video-btn" data-target="video-ahmet">Video Portrait Ahmet</a>
+                            <p>
+                                <a href="javascript:;" class="btn video-btn" data-target="video-ahmet">Video Portrait Ahmet</a>
+                            </p>
+                        <?php endif; ?>
+                        <?php if($team['diplomes'] != ''): ?>
+                            <div>
+                                <a href="javascript:;" class="diplomes-btn"><b>Diplomes ⬇︎</b></a>
+                                <div class="diplomes hide">
+                                    <?php echo $team['diplomes']; ?>
+                                </div>  
+                            </div>  
                         <?php endif; ?>
                     </div>
                     <?php endforeach; ?>

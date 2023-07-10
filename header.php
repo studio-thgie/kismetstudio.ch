@@ -13,7 +13,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #FFFDE5;
+            background-color: var(--primary-color);
             z-index: 9999;
 
             transition: 0.5s;
@@ -23,7 +23,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translateX(-50%) translateY(-70%) rotate(-10deg);
+            transform: translateX(-50%) translateY(-70%);
             margin: 0 auto;
         }
     </style>
