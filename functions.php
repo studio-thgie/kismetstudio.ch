@@ -39,7 +39,7 @@
 
     function enqueue_stuff() {
         wp_enqueue_style( 'normalize', get_template_directory_uri() . '/assets/normalize.css', array(), '8.0.1', 'all');
-        wp_enqueue_style( 'fonts', 'https://fonts.googleapis.com/css?family=Roboto:300,300i,700,700i&display=swap', array(), '1.0', 'all');
+        wp_enqueue_style( 'fonts', 'https://fonts.googleapis.com/css?family=Roboto:400,400i,300,300i,700,700i&display=swap', array(), '1.0', 'all');
         wp_enqueue_style( 'slick', get_template_directory_uri() . '/assets/slick-1.8.1/slick/slick.css', array(), '1.8.1', 'all');
         wp_enqueue_style( 'slick-theme', get_template_directory_uri() . '/assets/slick-1.8.1/slick/slick-theme.css', array(), '1.8.1', 'all');
         wp_enqueue_style( 'style', get_stylesheet_uri() );
