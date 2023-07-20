@@ -1,8 +1,7 @@
 
     <footer>
         <p>
-            &copy; <?php echo date("Y"); ?> by Kismet Studio Biel/Bienne | Concept & Design: <a href="https://www.sifon.li">SIFON</a><br>
-            Code: <a href="https://things.care" target="_blank">things.care</a>
+            &copy; <?php echo date("Y"); ?> by MANA Studio Biel/Bienne | Concept & Design: <a href="https://colindroz.ch/">Colin Droz</a> &amp; <a href="https://www.sifon.li">SIFON</a>
         </p>
     </footer>
 

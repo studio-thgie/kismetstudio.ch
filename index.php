@@ -262,9 +262,7 @@
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tri.svg">    
         </div>
         <section id="<?php sanitize_title(the_field('portrait_title')); ?>" class="portrait">
-            <div class="tar header">
-                <h2><?php the_field('portrait_title'); ?></h2>
-            </div>
+            <h2><?php the_field('portrait_title'); ?></h2>
             <div class="portrait-wrapper">
                 <div class="row">
                     <?php foreach( get_field('team') as $team ): ?>
@@ -300,14 +298,12 @@
             </div>
         </section>
         <section id="<?php sanitize_title(the_field('rates_title')); ?>" class="rates">
-            <div class="tar header">
-                <h2>
-                    <?php the_field('rates_title'); ?>
-                    <?php if(get_field('rate_subtitle')): ?>
-                    <p class="em"><?php the_field('rate_subtitle'); ?></p>
-                    <?php endif; ?>
-                </h2>
-            </div>
+            <h2>
+                <?php the_field('rates_title'); ?>
+                <?php if(get_field('rate_subtitle')): ?>
+                <p class="em"><?php the_field('rate_subtitle'); ?></p>
+                <?php endif; ?>
+            </h2>
             <div class="rate-wrapper">
                 <?php
                     $rates = get_posts( array(
@@ -343,7 +339,7 @@
                     <p class="em"><?php the_field('contact_subtitle'); ?></p>
                 <?php endif; ?>
             </h2>
-            <div class="portraits tar">
+            <div class="portraits">
                 <?php foreach( get_field('team') as $team ): ?>
                     <div class="portrait">
                         <p class="em"><?php echo $team['name']; ?></p>

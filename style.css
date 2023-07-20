@@ -51,11 +51,6 @@ h2 {
     font-weight: bold;
     text-transform: uppercase;
 }
-.courses h2,
-.rates h2,
-.portrait h2 {
-    font-size: 190px;
-}
 h3 {
     font-size: 30px;
     margin: 0 0 20px;
@@ -144,7 +139,6 @@ footer p {
     max-width: 1480px;
     font-size: 25px;
     font-weight: bold;
-    font-style: italic;
 }
 
 .tac {
@@ -327,20 +321,9 @@ main nav#bookable_course_list {
     max-width: 660px;
     margin-left: 30%;
 }
-
-/* .studio h2 {
-    position: relative;
-    top: 70px;
-    left: 30px;
-} */
-
-.courses h2 {
-    position: relative;
-    left: 100px;
-}
 .courses .visual-plan {
     position: relative;
-    margin-top: 200px;
+    margin-top: 100px;
 }
 .course-descriptions {
     padding-top: 60px;
@@ -372,10 +355,9 @@ main nav#bookable_course_list {
 }
 
 .single-portrait-wrapper {
-    padding: 40px;
+    padding: 40px 40px 40px 0;
 }
 .single-portrait-wrapper:nth-child(odd) {
-    text-align: right;
 }
 .single-portrait-wrapper .portrait-image {
     display: inline-block;
@@ -491,8 +473,6 @@ a.video-btn:hover {
 }
 .portraits .portrait {
     display: inline-block;
-    position: relative;
-    left: -30px;
 }
 .portraits .portrait p.em {
     margin-bottom: 5px;
