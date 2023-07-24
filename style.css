@@ -495,7 +495,7 @@ a.video-btn:hover {
     position: absolute;
     transform: translateY(0);
     width: 100%;
-    opacity: 0.3;
+    opacity: 0.05;
 }
 .decoration.news img {
     top: 60px;
@@ -508,7 +508,6 @@ a.video-btn:hover {
 .decoration.rates img {
     right: 60%;
     bottom: -240px;
-    max-height: 590px;
 }
 .decoration.contact {
     padding-bottom: 0;
