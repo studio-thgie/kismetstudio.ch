@@ -204,7 +204,7 @@
             var marker = new google.maps.Marker({
                 position: studio_loc,
                 map: map,
-                title: 'Kismet Studio'
+                title: 'Mana Studio'
             });
 
         }

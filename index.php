@@ -149,7 +149,7 @@
                     <p class="em"><?php the_field('courses_subtitle'); ?></p>
                 <?php endif; ?>
             </h2>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="one-half visual-plan">
                     <table class="plan-table">
                         <thead>
@@ -224,7 +224,7 @@
                     ?>
 
                 </div>
-            </div>
+            </div> -->
             <div class="decoration courses clear">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tri.svg">    
             </div>
@@ -317,10 +317,10 @@
                             
                             <section class="rate">
                                 <h3><?php the_title(); ?></h3>
-                                <p class="tac"><? _e('from','kismet'); ?></p>
-                                <p class="price"><? _e('chf','kismet'); ?> <?php the_field('price') ?></p>
+                                <p class="tac"><? _e('from','mana'); ?></p>
+                                <p class="price"><? _e('chf','mana'); ?> <?php the_field('price') ?></p>
                                 <div class="rate_content"><?php the_content(); ?></div>
-                                <h3><a href="#Kontakt"><? _e('contact-us','kismet'); ?></a></h3>
+                                <h3><a href="#Kontakt"><? _e('contact-us','mana'); ?></a></h3>
                             </section>
                         <?php
                         endforeach; 
@@ -351,7 +351,7 @@
                 <div class="two-third map">
                     <div id="map" style="width: 100%; height: 400px;"></div>
                     <a href="https://www.google.com/maps/dir//Kismet+Pilates+Studio,+Rue+de+Nidau+8,+2502+Bienne" target="_blank" id="directions-btn">
-                        <?php _e('directions', 'kismet'); ?>
+                        <?php _e('directions', 'mana'); ?>
                     </a>
                 </div>
                 <div class="one-third">

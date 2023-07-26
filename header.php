@@ -50,7 +50,7 @@
 
     <header>
         <a href="/">
-            <img class="logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="Logo Kismet">
+            <img class="logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="Logo Mana">
         </a>
         <nav aria-label="Sprachwahl" id="lang">
             <ul>

@@ -1,0 +1,63 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Kismet 2020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-09 08:58+0000\n"
+"PO-Revision-Date: 2021-02-01 08:18+0000\n"
+"Last-Translator: \n"
+"Language-Team: Deutsch (Schweiz)\n"
+"Language: de_CH\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.4.3; wp-5.5.3"
+
+#: functions.php:22
+msgid "Main Menu"
+msgstr ""
+
+#. Name of the template
+msgid "One-Pager"
+msgstr ""
+
+#: index.php:312
+msgid "from"
+msgstr "Ab"
+
+#: index.php:313
+msgid "chf"
+msgstr "CHF"
+
+#: index.php:315
+msgid "contact-us"
+msgstr "Kontaktiere uns"
+
+#: index.php:346
+msgid "directions"
+msgstr "Wegbeschreibung zum Studio"
+
+#. Name of the template
+msgid "Shop"
+msgstr ""
+
+#. Name of the theme
+msgid "Kismet 2020"
+msgstr ""
+
+#. Description of the theme
+msgid "Description"
+msgstr ""
+
+#. URI of the theme
+msgid "https://www.kismetstudio.ch/"
+msgstr ""
+
+#. Author of the theme
+msgid "Adrian Demleitner"
+msgstr ""
+
+#. Author URI of the theme
+msgid "http://things.care"
+msgstr ""

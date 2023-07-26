@@ -6,20 +6,20 @@
 
     add_filter('jpeg_quality', function($arg){return 95;});
  
-    if ( ! function_exists( 'kismet_setup' ) ) {
-        function kismet_setup() {
+    if ( ! function_exists( 'mana_setup' ) ) {
+        function mana_setup() {
         
             /**
              * Make theme available for translation.
              * Translations can be placed in the /languages/ directory.
              */
-            load_theme_textdomain( 'kismet', get_template_directory() . '/languages' );
+            load_theme_textdomain( 'mana', get_template_directory() . '/languages' );
         
             /**
              * Add support for two custom navigation menus.
              */
             register_nav_menus( array(
-                'main'   => __( 'Main Menu', 'kismet' )
+                'main'   => __( 'Main Menu', 'mana' )
             ) );
 
             /**
@@ -35,7 +35,7 @@
 
         }
     }
-    add_action( 'after_setup_theme', 'kismet_setup' );
+    add_action( 'after_setup_theme', 'mana_setup' );
 
     function enqueue_stuff() {
         wp_enqueue_style( 'normalize', get_template_directory_uri() . '/assets/normalize.css', array(), '8.0.1', 'all');
@@ -56,7 +56,7 @@
         } else {
             wp_enqueue_script( 'tryout-btn', get_template_directory_uri() . '/assets/tryout-btn-de.js', array(), '1.0', true); 
         }
-        wp_enqueue_script( 'kismet', get_template_directory_uri() . '/assets/kismet.js', array(), '1.0', true); 
+        wp_enqueue_script( 'mana', get_template_directory_uri() . '/assets/mana.js', array(), '1.0', true); 
     }
 
     add_action( 'wp_enqueue_scripts', 'enqueue_stuff' ); 
