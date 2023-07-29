@@ -126,7 +126,7 @@ a {
     transition: .25s;
 }
 a:hover {
-    color: #161615;
+    color: white;
 }
 .rate a {
     color: var(--primary-color)
@@ -265,6 +265,9 @@ header, main {
     padding: 0 40px;
     margin: 0 auto;
     clear: both;
+}
+header {
+    max-width: 1535px;
 }
 .logo {
     height: 50px;
@@ -688,7 +691,7 @@ a.video-btn:hover {
         position: relative;
         font-size: 60px !important;
         /* top: -15px !important; */
-        left: -5px !important;
+        /* left: -5px !important; */
         right: auto;
     }
     h3 {
