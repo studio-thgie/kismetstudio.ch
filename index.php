@@ -48,9 +48,9 @@
                 <?php endif; ?>
             </h2>
             <div class="bookable_courses">
-                <iframe src="https://www.supersaas.fr/schedule/kismetstudio/Stundenplan_Kismet?m=1" frameborder="0" scrolling="no"></iframe> 
+                <iframe src="https://www.supersaas.fr/schedule/studiomana/Stundenplan_MANA?m=1" frameborder="0" scrolling="no"></iframe> 
                 <div class="top_block"></div>
-                <a href="https://www.supersaas.fr/schedule/kismetstudio/Stundenplan_Kismet" target="_blank" class="bottom_gradient">
+                <a href="https://www.supersaas.fr/schedule/studiomana/Stundenplan_MANA" target="_blank" class="bottom_gradient">
                     <h3><?php the_field('booking_plattform_label'); ?></h3>
                 </a>
                 <?php
@@ -350,17 +350,17 @@
             <div class="row">
                 <div class="two-third map">
                     <div id="map" style="width: 100%; height: 400px;"></div>
-                    <a href="https://www.google.com/maps/dir//Kismet+Pilates+Studio,+Rue+de+Nidau+8,+2502+Bienne" target="_blank" id="directions-btn">
+                    <a href="https://www.google.com/maps/dir/Studio+Mana,+Rue+de+Nidau+8,+2502+Bienne" target="_blank" id="directions-btn">
                         <?php _e('directions', 'mana'); ?>
                     </a>
                 </div>
                 <div class="one-third">
                     <?php the_field('contact_desc'); ?>
                     <div class="social-media">
-                        <a target="_blank" href="https://www.instagram.com/kismetstudiopilates/">
+                        <a target="_blank" href="https://www.instagram.com/studio_mana_biel_bienne/">
                             <?php echo file_get_contents( get_template_directory_uri() . '/assets/images/Instagram.svg' ); ?>
                         </a>
-                        <a target="_blank" href="https://www.facebook.com/pg/kismetstudio/about/">
+                        <a target="_blank" href="https://www.facebook.com/kismetstudio">
                             <?php echo file_get_contents( get_template_directory_uri() . '/assets/images/Facebook.svg' ); ?>
                         </a>
                         <a target="_blank" href="https://www.youtube.com/channel/UCosei1621m8QyltHxoOC8cA">
@@ -373,7 +373,7 @@
         </section>
     </main>
 
-    <a id="tryout-btn" href="mailto:info@kismetstudio.ch?subject=<?php echo rawurlencode(get_field('tryout_subject')); ?>"></a>
+    <a id="tryout-btn" href="mailto:info@studiomana.ch?subject=<?php echo rawurlencode(get_field('tryout_subject')); ?>"></a>
     <a id="booking-btn" href="#<?php sanitize_title(the_field('booking_title')); ?>"></a>
 
 <?php get_footer(); ?>
