@@ -44,6 +44,14 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
+h1 {
+    display: inline-block;
+    margin: 0;
+    font-size: 180px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
 h2 {
     display: inline-block;
     margin: 0;
@@ -686,6 +694,11 @@ a.video-btn:hover {
 @media (max-width: 480px) {
     body {
         padding: 20px 0;
+    }
+    h1 {
+        position: relative;
+        font-size: 80px !important;
+        right: auto;
     }
     h2 {
         position: relative;

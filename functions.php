@@ -25,7 +25,8 @@
             /**
              * Enable support for post thumbnails and featured images.
              */
-            add_theme_support( 'post-thumbnails' );
+            add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
+            
 
             /**
              * Add Custom Image Sizes
