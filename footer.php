@@ -8,7 +8,7 @@
     <?php wp_footer(); ?> 
     
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChAg8cF_T7iTRLNRIMGhbnkj5uSmq72-Q&callback=init_map&libraries=&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key={GOOGLE_MAPS_API_KEY}&callback=init_map&libraries=&v=weekly"
       defer
     ></script>
 
